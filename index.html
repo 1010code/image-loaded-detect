@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image-loaded-detect Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/loading.css">
+    <style>
+        /* css背景全螢幕填滿 */
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-color: #9ed9e9;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading -->
+    <div id="load-wrapper">
+        <div class="loader">
+            <span class="ringFour"></span>
+            <span class="ringThree"></span>
+            <span class="colorRing"></span>
+            <span class="ringTwo"></span>
+            <span class="ball"></span>
+        </div>
+        <div class="label">
+            <h2>載入中...</h2>
+        </div>
+    </div>
+    <script>
+        // 建立一張照片
+        var bgImg = new Image();
+        // 當圖片載入完成時執行onload function
+        bgImg.onload = function () {
+            console.log('載入完成！');
+            // 在body放入背景圖位置
+            document.body.style.backgroundImage = 'url(' + bgImg.src + ')';
+            // 停止loading動畫
+            document.getElementById('load-wrapper').classList.add('d-none');
+        };
+        // 指定圖片來源位置
+        bgImg.src = 'https://effigis.com/wp-content/uploads/2015/02/DigitalGlobe_WorldView1_50cm_8bit_BW_DRA_Bangkok_Thailand_2009JAN06_8bits_sub_r_1.jpg';
+    </script>
+</body>
+
+</html>
