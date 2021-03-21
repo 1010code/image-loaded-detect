@@ -1,6 +1,8 @@
 # image-loaded-detect
 load the image using Javascript, and then set that image as the backgroud.
 
+![](./screenshot/demo.gif)
+
 ```js
 // 建立一張照片
 var bgImg = new Image();
