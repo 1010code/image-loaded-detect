@@ -10,7 +10,7 @@ jobs:
       MY_SECRET   : ${{secrets.commit_secret}}
       USER_NAME   : andy6804tw
       USER_EMAIL  : andy6804tw@yahoo.com.tw
-      PUBLISH_DIR : ./web
+      PUBLISH_DIR : ./
     runs-on: ubuntu-latest
     strategy:
       matrix:
